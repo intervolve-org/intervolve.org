@@ -1,43 +1,75 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
-	background-color: #ffffff;
-}
-
-h1 {
-	color: blue;
-}
-
-.button {
-  border: none;
+  background-color: #404040;
+/*  text-color: #cccccc; */
+/*  font-family: "Courier New", "Lucida Console", Monaco; */
+  font-family: Arial, Verdana, Helvetica;
   color: white;
-  padding: 16px 32px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.navbar {
+  float: left;
+}
+
+li a.navbar {
+  display: block;
+  color: white;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
 }
 
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
+/* Change the link color to #111 (black) on hover */
+li a.navbar:hover {
+  background-color: #111;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 5px;
 }
 
-.button1:hover {
-  background-color: #4CAF50;
-  color: white;
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #505050;
 }
 
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
-
