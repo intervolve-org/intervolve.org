@@ -1,6 +1,6 @@
 /***** POSTS  *****/
 
-p.post {
+div.post {
 	font-size: 18px;
 	text-shadow: 1.5px 1.5px 5px black;
 }
