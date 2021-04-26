@@ -92,6 +92,11 @@ p.post {
   }
 }
 
+img.header-image {
+	width:125px;
+	height:125px;
+}
+
 
 /******  CONTENT AREA  *****/
 
