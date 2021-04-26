@@ -17,12 +17,39 @@ title: mrghorm.com
 		</div>
 	</div>
 
+</div>
 
-<p> This is a simple Jekyll site, using a template </p>
+<div class="content-row">
+	<div class="content-column-left">
+		<h3> Latest Posts: </h3>
+
+		<ul class="content-list" style="color:white;list-style-type:none;" >
+			{% for post in site.posts limit:10 %}
+				<a href="{{ post.url }}" class="post-card">
+				<li class="post-card">
+					<h2 class="post-card">{{ post.title }}</h2>
+					<img class="post-card" src="https://mrghorm.com{{ post.image }}" alt="">
+					<p class="excerpt">{{ post.excerpt }}</p>
+					<p class="tags post-card"> Author: {{ post.author }} </p>
+
+				</li>
+				</a>
+			{% endfor %}
+		</ul>
+
+	</div>
+	<div class="sidebar-column">
+
+		<h3> Post categories: </h3>
+
+		<div class="sidebar-content">
+
+			<ul>
+				<li>Sidebar</li>
+				<li>Test</li>
+			</ul>
+		</div>
+	</div>
+</div>
 
 
-<button class="button button1">Test</button>
-
-<p> Another test wow </p>
-
-<p> This is Emma's new sentence again </p>

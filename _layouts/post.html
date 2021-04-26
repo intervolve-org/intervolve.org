@@ -4,11 +4,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{ page.title }}</title>
-		<link rel="stylesheet" href="assets/css/default.css">
+		<link rel="stylesheet" href="https://mrghorm.com/assets/css/default.css">
 	</head>
 	<body>
-		<h1>{{ page.title }}</h1>
 
+		<h1> mrghorm.com </h1>
 		<ul class="navbar">
 			<li class="navbar"><a class="navbar" href="https://mrghorm.com">Home</a></li>
 			<li class="navbar"><a class="navbar" href="">Element</a></li>
@@ -16,10 +16,18 @@
 			<li class="navbar"><a class="navbar" href="">Projects</a></li>
 			<li class="navbar"><a class="navbar" href="">Blog</a></li>
 		</ul>
-	
 		<p></p>
-
+		<h1>{{ page.title }}</h1>
 		<div>
+	
+			<img src="https://mrghorm.com{{ page.image }}" class="post-image">
+
+			<p class="tag"> Author: &emsp;{{ page.author }} </p>
+			<p class="tag"> Created: &ensp;{{ page.date | date: "%Y-%m-%d" }} </p>
+			<!--<p> Last Updated {{ "now" | date: "%Y-%m-%d %H:%M" }} </p>-->
+
+			<hr>
+
 			{{ content }}
 		</div>
 	</body>
