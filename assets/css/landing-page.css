@@ -90,6 +90,7 @@ li.post-card {
 
 a.post-card {
 	text-decoration: none;
+  color: red;
 }
 
 img.post-card {
