@@ -1,0 +1,50 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  background-color: #404040;
+/*  text-color: #cccccc; */
+/*  font-family: "Courier New", "Lucida Console", Monaco; */
+  font-family: Arial, Verdana, Helvetica;
+  color: white;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+
+a:link {
+	color: #438EFF;
+}
+
+a:visited {
+	color: #6a7b95;
+}
+
+h1 {
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+
+h3 {
+	color: white;
+}
+
+p,ul,ol {
+	color: #eeeeee;
+}
+
+ul {
+	color: #eeeeee;
+}
+
+ol {
+	color: #eeeeee;
+}

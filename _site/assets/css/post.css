@@ -1,0 +1,19 @@
+/***** POSTS  *****/
+
+div.post {
+	font-size: 18px;
+	text-shadow: 1.5px 1.5px 5px black;
+}
+
+/******  POST TAGS  *****/
+
+.post-image {
+	max-height: 200px;
+}
+
+p.tag {
+	color: #9f9f9f;
+	font-size: 16px;
+	line-height: 0.3;
+	text-shadow: 0 0;
+}
