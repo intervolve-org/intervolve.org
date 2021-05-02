@@ -29,6 +29,15 @@
 
 			</div>
 
+			<hr>
+
+			<h4> Post categories </h4>
+			<ul>
+				{% for category in post.categories %}
+					<li>{{ category }}</li>
+				{% endfor %}
+			</ul>
+
 		</div>
 	</body>
 </html>
