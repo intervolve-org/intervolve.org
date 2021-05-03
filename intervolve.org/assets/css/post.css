@@ -21,4 +21,9 @@ code {
 	width: auto;
 	overflow-x: scroll;
 	display: block;
+	border: 2px solid #ddd;
+	padding: 5px;
+	background: #555;
+	font-family: "Courier New";
+	color: #ddd;
 }
