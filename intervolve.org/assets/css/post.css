@@ -26,4 +26,5 @@ code {
 	background: #555;
 	font-family: "Courier New";
 	color: #ddd;
+	max-height: 500px;
 }
