@@ -1,9 +1,3 @@
----
-layout: default
-title: Minecraft Forge Server
----
-
- 
 
 
 ### Hello from Greekenox!
