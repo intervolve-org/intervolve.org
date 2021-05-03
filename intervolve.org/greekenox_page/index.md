@@ -1,4 +1,6 @@
-
+---
+layout: post
+---
 
 ### Hello from Greekenox!
 I host a modded Minecraft pack at [mc.pootis.website](http://mc.pootis.website)
