@@ -18,6 +18,8 @@ p.tag {
 	text-shadow: 0 0;
 }
 code {
+	width: auto;
 	overflow: auto;
+	overflow-x: scroll;
 	white-space: nowrap;
 }
