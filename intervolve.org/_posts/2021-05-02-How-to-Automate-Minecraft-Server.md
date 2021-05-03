@@ -4,14 +4,14 @@ title: "How to Automate Minecraft Server Start/Backup on Linux"
 image: /assets/images/linux.png
 author: greekenox
 ---
-***If this looks horrible ill fix it later***
-To provide some content I'm going to show you how to easily automate your minecraft server using a few scripts and cron jobs.
+***If this looks horrible ill fix it later***  
+To provide some content I'm going to show you how to easily automate your minecraft server using a few scripts and cron jobs.  
 
-I found one of these scripts online but the author decided to use *images* for the code examples. The code will be here so you can copy paste it instead. We will also see how lots of code works out on this page. I will not edit them making it easy to replace the things you need, so youll have to read through it and test it to make sure you have configured it correctly.
+I found one of these scripts online but the author decided to use *images* for the code examples. The code will be here so you can copy paste it instead. We will also see how lots of code works out on this page. I will not edit them making it easy to replace the things you need, so youll have to read through it and test it to make sure you have configured it correctly.  
 
 ### Auto Restart
->serverrestartcheck.sh
-This will check for a screen session "mc" and run ServerStart.sh if needed. It will be added to the cron job below.
+>serverrestartcheck.sh  
+This will check for a screen session "mc" and run ServerStart.sh if needed. It will be added to the cron job below.  
 
 `
 #!/bin/sh
@@ -21,11 +21,12 @@ if ! screen -list | grep -q mc; then
 			            "/home/greekenox/minecraft-forge-1.16.5/ServerStart.sh" | sed 's/^/  /'
 				    >> /home/greekenox/forgeRestart.log 2>&1
 			    fi
-`
-I remembered this does not actually put anything in the log file, will have to fix that. Maybe Matt can debug it.
+`  
+I remembered this does not actually put anything in the log file, will have to fix that. Maybe Matt can debug it.  
 
->ServerStart.sh
-`#!/bin/sh
+>ServerStart.sh  
+`  
+#!/bin/sh
 # Valhelsia 3 Server Startup Script
 if [ $(date +%H) = 05 ] && [ $(date +%M) -le 10  ]; then exit;  fi 
 
@@ -60,25 +61,25 @@ echo 'Starting Valhelsia 3 Server'
 
 	
 echo "Server Started"
-`
-The if statement at the begining keeps the script from running from 05:00 to 05:10 so a backup can be taken at the same time.
-Replace the java arguments with the version of java you are running or just "java". Set your Xmx/Xms parameters for ram allocation.
+`  
+The if statement at the begining keeps the script from running from 05:00 to 05:10 so a backup can be taken at the same time.  
+Replace the java arguments with the version of java you are running or just "java". Set your Xmx/Xms parameters for ram allocation.  
 
-Both scripts should be in the minecraft server folder. Test it by running `serverrestartcheck.sh`
+Both scripts should be in the minecraft server folder. Test it by running `serverrestartcheck.sh`  
 
-### Backup script
-Taking a backup is pretty simple with tar. Modpacks like Valhelsia 3 automatically take world backups every 2 hours but I like to take a full backup every day and have my home server download it.
+### Backup script  
+Taking a backup is pretty simple with tar. Modpacks like Valhelsia 3 automatically take world backups every 2 hours but I like to take a full backup every day and have my home server download it.  
 
-Lets tar the entire server folder excluding the "backups" folder.
->backup.sh
+Lets tar the entire server folder excluding the "backups" folder.  
+>backup.sh  
 `tar --exclude='/home/greekenox/minecraft-forge-1.16.5/backups' -zcvf "/home/greekenox/backup/current.backup.val3.tar.gz" /home/greekenox/minecraft-forge-1.16.5/`
 
 
 ### Cron Jobs
-Here we add the `serverrestartcheck.sh` script twice, with a 30s sleep so it runs every 30s. This uses very little resources.
-It also sends commands to the server using screen. It will warn players that the server is going to restart using red text.
-And finally, it takes a backup 1 minute after the server stops.
-The line at the top of `ServerStart.sh` wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.
+Here we add the `serverrestartcheck.sh` script twice, with a 30s sleep so it runs every 30s. This uses very little resources.  
+It also sends commands to the server using screen. It will warn players that the server is going to restart using red text.  
+And finally, it takes a backup 1 minute after the server stops.  
+The line at the top of `ServerStart.sh` wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.  
 
 `
 * * * * * /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh
@@ -89,17 +90,18 @@ The line at the top of `ServerStart.sh` wont allow the server to start while the
 1 5 * * * /home/james/backup.sh
 `
 
-### Download backup
->get-minecraft-backup.sh
+### Download backup  
+>get-minecraft-backup.sh  
+`
 name=$(date '+%Y-%m-%d')
 archive=current.backup.val3.tar.gz
 archivez=other.backup.tar.gz
 scp root@mc.pootis.website:/home/greekenox/backup/$archive /home/greekenox/backup/$archive
 scp greekenox@otherserver.net:/home/greekenox/backup/$archivez /home/greekenox/backup/$archivez
 mv /home/greekenox/backup/$archive "/home/greekenox/backup/$name.1.16.tar.gz"
+`  
+This script runs on the home server and is set to run half an hour after the server makes a backup with the cron job  
 
-This script runs on the home server and is set to run half an hour after the server makes a backup with the cron job
+`0 5 * * * /home/greekenox/get-minecraft-backup.sh`  
 
-`0 5 * * * /home/greekenox/get-minecraft-backup.sh`
-
-Thats my crude way of automating my minecraft server, and an even cruder way of explaining it. But lets see how it looks on the website and I'll clean it up.
+Thats my crude way of automating my minecraft server, and an even cruder way of explaining it. But lets see how it looks on the website and I'll clean it up.  
