@@ -27,8 +27,7 @@ I remembered this does not actually put anything in the log file, will have to f
 
 >ServerStart.sh  
 
-`  
-\#!/bin/sh
+`\#!/bin/sh
 \#Valhelsia 3 Server Sartup Script
 if [ $(date +%H) = 05 ] && [ $(date +%M) -le 10  ]; then exit;  fi 
 
@@ -38,10 +37,10 @@ echo "Starting Valhelsia 3 Server."
 for sessiion in $(screen -ls | grep -o '[0-9]\{3,\}\.\S*')
 do
 	screen -r mc -p0 -X stuff "&9Server is restarting.\015"
-	screen -r mc -p0 -X stuff "stop\015" 
+	screen -r mc -p0 -X stuff "stop\015"
 done
 
-counter=0 
+counter=0
 while [ $(screen -ls | grep -c 'No Sockets found in') -lt 1 ]; do
 	if [ $(( $counter % 10 )) -eq 0 ]; then
 		echo 'A previous server is in use and running. Waiting for 10 seconds ......'
@@ -54,16 +53,15 @@ done
 echo 'Starting Valhelsia 3 Server'
 	screen -dmS "mc" /usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar -Xms10G -Xmx10G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:G1HeapRegionSize=32M -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+AlwaysPreTouch server.jar nogui
 	sleep 1
-	while [ $(screen -ls | grep -c 'No Sockets found in') -ge 1 ]; 
+	while [ $(screen -ls | grep -c 'No Sockets found in') -ge 1 ];
 	do
 		echo 'Wait 5 seconds'
 		sleep 5
 		screen -dmS "mc" /usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar -Xms10G -Xmx10G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:G1HeapRegionSize=32M -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+AlwaysPreTouch server.jar nogui
 	done
 
-	
-echo "Server Started"
-`  
+
+echo "Server Started"` 
   
 The if statement at the begining keeps the script from running from 05:00 to 05:10 so a backup can be taken at the same time.  
 Replace the java arguments with the version of java you are running or just "java". Set your Xmx/Xms parameters for ram allocation.  
@@ -86,12 +84,12 @@ And finally, it takes a backup 1 minute after the server stops.
 The line at the top of *ServerStart.sh* wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.  
 
 `
-\* \* \* \* \* /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh
-\* \* \* \* \* ( sleep 30 ; /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh)
-55 4 \* \* \* screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 5 minutes. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
-59 4 \* \* \* screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 1 minute. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
-00 5 \* \* \* screen -S mc -p 0 -X stuff '/stop^M'
-1 5 \* \* \* /home/james/backup.sh
+\* * * * * /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh
+\* * * * * ( sleep 30 ; /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh)
+55 4 * * * screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 5 minutes. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
+59 4 \* * * screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 1 minute. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
+00 5 \* * * screen -S mc -p 0 -X stuff '/stop^M'
+1 5 \* * * /home/james/backup.sh
 `
 
 ### Download backup  
