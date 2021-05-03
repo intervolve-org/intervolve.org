@@ -1,0 +1,50 @@
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 5px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 15px -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: left;
+  background-color: #505050;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+img.header-image {
+	width:40px;
+	height:40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  align: center;
+}
+h3.header-title {
+
+}
+
+p, a {
+	font-size: 18px;
+	text-shadow: 1.5px 1.5px 5px black;
+}
