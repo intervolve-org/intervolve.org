@@ -19,7 +19,11 @@ p.tag {
 }
 code {
 	width: auto;
-	overflow: auto;
 	overflow-x: scroll;
-	white-space: nowrap;
+	display: block;
+	border: 2px solid #ddd;
+	padding: 5px;
+	background: #555;
+	font-family: "Courier New";
+	color: #ddd;
 }
