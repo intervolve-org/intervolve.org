@@ -28,8 +28,8 @@ I remembered this does not actually put anything in the log file, will have to f
 >ServerStart.sh  
 
 `  
-#!/bin/sh
-# Valhelsia 3 Server Startup Script
+\#!/bin/sh
+\#Valhelsia 3 Server Sartup Script
 if [ $(date +%H) = 05 ] && [ $(date +%M) -le 10  ]; then exit;  fi 
 
 
@@ -86,12 +86,12 @@ And finally, it takes a backup 1 minute after the server stops.
 The line at the top of *ServerStart.sh* wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.  
 
 `
-* * * * * /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh
-* * * * * ( sleep 30 ; /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh)
-55 4 * * * screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 5 minutes. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
-59 4 * * * screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 1 minute. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
-00 5 * * * screen -S mc -p 0 -X stuff '/stop^M'
-1 5 * * * /home/james/backup.sh
+\* \* \* \* \* /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh
+\* \* \* \* \* ( sleep 30 ; /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh)
+55 4 \* \* \* screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 5 minutes. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
+59 4 \* \* \* screen -S mc -p 0 -X stuff '/tellraw @a {"text":"Server stopping to take a full backup in 1 minute. Server will be up ~15 minutes past the hour","bold":true,"color":"dark_red"}^M'
+00 5 \* \* \* screen -S mc -p 0 -X stuff '/stop^M'
+1 5 \* \* \* /home/james/backup.sh
 `
 
 ### Download backup  
