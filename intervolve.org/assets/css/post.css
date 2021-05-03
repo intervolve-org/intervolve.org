@@ -17,3 +17,7 @@ p.tag {
 	line-height: 0.3;
 	text-shadow: 0 0;
 }
+code {
+	overflow: auto;
+	white-space: nowrap;
+}
