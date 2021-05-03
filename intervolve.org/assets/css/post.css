@@ -19,7 +19,6 @@ p.tag {
 }
 code {
 	width: auto;
-	overflow: auto;
 	overflow-x: scroll;
-	white-space: nowrap;
+	display: block;
 }
