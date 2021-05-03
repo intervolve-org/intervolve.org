@@ -6,7 +6,7 @@ My website is a work in progress, if it will be anything more than that I dont k
 
 **Valhelsia 3** has over 200 mods with natural themes like Botania and Blood Magic. Also more technical mods like ComputerCraft and Mekanizm. Or if you just want to explore there are many biome changes and mobs.
 
-![Val1](assets/images/ValServer1_500px.png) ![Val2](assets/images/ValServer2_500px.png)
+![Val1](/assets/images/ValServer1_500px.png) ![Val2](/assets/images/ValServer2_500px.png)
 
 ### To play this pack
 - [Download](https://www.curseforge.com/minecraft/modpacks/valhelsia-3) v3.2.4
