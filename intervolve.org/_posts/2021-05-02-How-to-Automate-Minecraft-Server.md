@@ -12,26 +12,26 @@ I found one of these scripts online but the author decided to use *images* for t
 ### Auto Restart
 >serverrestartcheck.sh   
 
-This will check for a screen session "mc" and run ServerStart.sh if needed. It will be added to the cron job 
+This will check for a screen session "mc" and run ServerStart.sh if needed. It will also create a log of each time the server restarts with date and time. It will be added to the cron job to check if the server is running in a screen session.
 
 ```bash:
 if ! screen -list | grep -q mc; then
-	        echo "$(date) $(ls -1 | wc 1):" >> /home/greekenox/forgeRestart.log 2 >1&1
-		        cd '/home/greekenox/minecraft-forge-1.16.5/'
-			            "/home/greekenox/minecraft-forge-1.16.5/ServerStart.sh" | sed 's/^/  /'
-				    >> /home/greekenox/forgeRestart.log 2>&1
-			    fi
+	        echo "$(date) $(ls -1 | wc):" >> /home/greekenox/forgeRestart.log 
+	        cd '/home/greekenox/minecraft-forge-1.16.5/'
+		"/home/greekenox/minecraft-forge-1.16.5/ServerStart.sh" | sed 's/^/  /'
+		>> /home/greekenox/forgeRestart.log 
+	fi
 ```  
   
-I remembered this does not actually put anything in the log file, will have to fix that. Maybe Matt can debug it.  
 
 >ServerStart.sh  
 
 ```bash: 
 #!/bin/sh
 #Valhelsia 3 Server Sartup Script
-if [ $(date +%H) = 05 ] && [ $(date +%M) -le 10  ]; then exit;  fi 
 
+#Dont run script between 05:00 and 05:10
+if [ $(date +%H) = 05 ] && [ $(date +%M) -le 10  ]; then exit;  fi 
 
 
 echo "Starting Valhelsia 3 Server."
@@ -42,6 +42,8 @@ do
 done
 
 counter=0
+
+#Wait to start if server is running (if ServerStart.sh is run manually)
 while [ $(screen -ls | grep -c 'No Sockets found in') -lt 1 ]; do
 	if [ $(( $counter % 10 )) -eq 0 ]; then
 		echo 'A previous server is in use and running. Waiting for 10 seconds ......'
@@ -51,9 +53,12 @@ while [ $(screen -ls | grep -c 'No Sockets found in') -lt 1 ]; do
 	counter=$((counter +1))
 done
 
+#Start server
 echo 'Starting Valhelsia 3 Server'
 	screen -dmS "mc" /usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar -Xms10G -Xmx10G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:G1HeapRegionSize=32M -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+AlwaysPreTouch server.jar nogui
 	sleep 1
+
+#Try again if screen wasnt successful
 	while [ $(screen -ls | grep -c 'No Sockets found in') -ge 1 ];
 	do
 		echo 'Wait 5 seconds'
@@ -66,14 +71,15 @@ echo "Server Started"
 ``` 
   
 The if statement at the begining keeps the script from running from 05:00 to 05:10 so a backup can be taken at the same time.  
-Replace the java arguments with the version of java you are running or just "java". Set your Xmx/Xms parameters for ram allocation.  
-Both scripts should be in the minecraft server folder. Test it by running *serverrestartcheck.sh*  
+Replace the java arguments with the version of java you are running or just "java". Set your `Xmx` and `Xms` parameters for ram allocation.  
+Both scripts `serverrestartcheck.sh` and `ServerStart.sh` should be in the minecraft server folder. Remember to `chmod +x` for both files. Test it by running `./serverrestartcheck.sh`  
+`screen -ls` to see if a session is running and `screen -r` to attach. `Ctrl+a d` to detach from screen.  
   
 ### Backup script  
-
+  
 Taking a backup is pretty simple with tar. Modpacks like Valhelsia 3 automatically take world backups every 2 hours but I like to take a full backup every day and have my home server download it.  
 
-Lets tar the entire server folder excluding the "backups" folder.  
+Lets make a script to tar the entire server folder excluding the "backups" folder.  
 >backup.sh  
 
 ```bash: 
@@ -82,10 +88,10 @@ tar --exclude='/home/greekenox/minecraft-forge-1.16.5/backups' -zcvf "/home/gree
 
   
 ### Cron Jobs
-Here we add the *serverrestartcheck.sh* script twice, with a 30s sleep so it runs every 30s. This uses very little resources.  
+Here we add the `serverrestartcheck.sh` script twice, with a 30s sleep so it runs every 30s. This uses very little resources.    
 It also sends commands to the server using screen. It will warn players that the server is going to restart using red text.  
 And finally, it takes a backup 1 minute after the server stops.  
-The line at the top of *ServerStart.sh* wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.  
+The line at the top of `ServerStart.sh` wont allow the server to start while the backup is being taken. Depending on how fast your disk is and how big the server is you can shorten up times.  
 
 ```bash:
 * * * * * /home/greekenox/minecraft-forge-1.16.5/serverrestartcheck.sh  
@@ -97,6 +103,8 @@ The line at the top of *ServerStart.sh* wont allow the server to start while the
 ```
   
 ### Download backup  
+
+This script runs on the home server and is set to run half an hour after the server makes a backup with the cron job   
 >get-minecraft-backup.sh  
   
 ```bash:
@@ -109,10 +117,9 @@ mv /home/greekenox/backup/$archive "/home/greekenox/backup/$name.1.16.tar.gz"
 mv /home/greekenox/backup/$archivez "/home/greekenox/backup/$name.other.tar.gz"
 ```
   
-This script runs on the home server and is set to run half an hour after the server makes a backup with the cron job  
-
+Home server cron job
 ```bash: 
-0 5 * * * /home/greekenox/get-minecraft-backup.sh
+30 5 * * * /home/greekenox/get-minecraft-backup.sh
 ```
 
-Thats my crude way of automating my minecraft server, and an even cruder way of explaining it. But lets see how it looks on the website and I'll clean it up.  
+Thats my crude way of automating my minecraft server, and an even cruder way of explaining it. 
