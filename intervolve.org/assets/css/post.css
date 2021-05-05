@@ -1,5 +1,7 @@
 /***** POSTS  *****/
 
+@import "highlight.css";
+
 div.post {
 	font-size: 18px;
 	text-shadow: 1.5px 1.5px 5px black;
@@ -14,14 +16,19 @@ div.post {
 p.tag {
 	color: #9f9f9f;
 	font-size: 16px;
-	line-height: 0.3;
+	line-height: 2px;
 	text-shadow: 0 0;
 }
 code {
-	border: 1px solid #555;
-	border-radius: 5px;
 	background: #555;
+	padding-top: -1px;
+	padding-bottom: -1px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border: 0.2px solid #555;
+	border-radius: 5px;
 	font-family: "Courier New";
+	font-size:15.5px;
 }
 pre {
 	width: auto;
@@ -35,7 +42,7 @@ pre {
 blockquote {
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 40px;
+  margin-left: 15px;
   padding-left: 15px;
   border-left: 3px solid #ddd;
 }
