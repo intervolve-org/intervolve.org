@@ -5,7 +5,6 @@ image: /assets/images/linux.png
 author: greekenox
 markdown: kramdown
 kramdown:
-  syntax_highlighter: rouge
   html_to_native: true
 ---
 ***If this looks horrible ill fix it later***  
@@ -18,7 +17,7 @@ I found one of these scripts online but the author decided to use *images* for t
 
 This will check for a screen session "mc" and run ServerStart.sh if needed. It will also create a log of each time the server restarts with date and time. It will be added to the cron job to check if the server is running in a screen session.
 
-```bash:
+```shell
 if ! screen -list | grep -q mc; then
 	        echo "$(date) $(ls -1 | wc):" >> /home/greekenox/forgeRestart.log 
 	        cd '/home/greekenox/minecraft-forge-1.16.5/'
@@ -30,7 +29,7 @@ if ! screen -list | grep -q mc; then
 
 >ServerStart.sh  
 
-```bash: 
+```shell
 #!/bin/sh
 #Valhelsia 3 Server Sartup Script
 
