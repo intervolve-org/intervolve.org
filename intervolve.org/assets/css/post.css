@@ -29,6 +29,7 @@ code {
 	border-radius: 5px;
 	font-family: "Courier New";
 	font-size:15.5px;
+	text-shadow: 0;
 }
 pre {
 	width: auto;
