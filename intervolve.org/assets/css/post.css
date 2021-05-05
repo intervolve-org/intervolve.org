@@ -18,16 +18,20 @@ p.tag {
 	text-shadow: 0 0;
 }
 code {
+	padding: 1px;
+	background: #555;
+	font-family: "Courier New";
+	color: #ddd;
+}
+pre {
 	width: auto;
 	overflow-x: scroll;
 	display: block;
 	border: 2px solid #ddd;
-	padding: 5px;
+	border-radius: 5px;
 	background: #555;
-	font-family: "Courier New";
-	color: #ddd;
-	max-height: 500px;
 }
+
 blockquote {
   margin-top: 10px;
   margin-bottom: 10px;
