@@ -6,11 +6,7 @@ author: greekenox
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
-  input: GFM
-  auto_ids: false
-  toc_levels:     1..3
   html_to_native: true
-  auto_id_stripping: false
 ---
 ***If this looks horrible ill fix it later***  
 To provide some content I'm going to show you how to easily automate your minecraft server using a few scripts and cron jobs.  
