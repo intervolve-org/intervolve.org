@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /greekenox-page/
+permalink: /greekenox-mc-server/
 ---
 
 ### Hello from Greekenox!
