@@ -8,21 +8,22 @@
 		<link rel="stylesheet" href="/assets/css/post.css">
 	</head>
 	{% include warning.html %}
-	<body>		
+	<body>
 		<h1> intervolve.org </h1>
 		{% include navbar.html %}
 		<p></p>
 		<h1>{{ page.title }}</h1>
+		<p class="tag"> By {{ page.author }}, {{ page.date | date: "%b %d %Y" }} </p>
 		<div>
 
-			<img src="{{ page.image }}" class="post-image">
+			<div class="post-header">
+				<img src="{{ page.image }}" class="post-image">
 
-			<p class="tag"> Author: &emsp;{{ page.author }} </p>
-			<p class="tag"> Created: &ensp;{{ page.date | date: "%Y-%m-%d" }} </p>
-			<!--<p> Last Updated {{ "now" | date: "%Y-%m-%d %H:%M" }} </p>-->
 
+				<!-- <p class="tag"> Created: &ensp;{{ page.date | date: "%Y-%m-%d" }} </p> -->
+				<!--<p> Last Updated {{ "now" | date: "%Y-%m-%d %H:%M" }} </p>-->
+			</div>
 			<hr>
-
 			<div class="post">
 
 				{{ content }}
@@ -33,7 +34,7 @@
 
 			<h4> Post categories </h4>
 			<ul>
-				{% for category in post.categories %}
+				{% for category in page.categories %}
 					<li>{{ category }}</li>
 				{% endfor %}
 			</ul>

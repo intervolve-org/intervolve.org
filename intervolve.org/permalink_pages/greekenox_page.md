@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /greekenox-page/
 ---
 
 ### Hello from Greekenox!

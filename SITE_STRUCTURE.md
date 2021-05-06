@@ -1,0 +1,2 @@
+Suggested Site Structure Format
+
