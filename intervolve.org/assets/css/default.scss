@@ -1,7 +1,13 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@import "greekenox";
+@import "highlight";
+
+
 * {
 	box-sizing: border-box;
 }
-
 body {
   background-color: #404040;
 /*  text-color: #cccccc; */
