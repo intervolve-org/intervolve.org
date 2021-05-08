@@ -14,3 +14,16 @@ layout: default
 {% for post in site.categories.greekenox %}
  <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
+<hr>
+<h1> All categories </h1>
+{% for cat in site.categories %}
+	{% if cat[0] == "blogs" %}
+		{% continue %}
+	{% endif %}
+	<h3> {{ cat[0] }} </h3>
+	<ul>
+	{% for post in cat[1] %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a></li>	
+	{% endfor %}
+	</ul>
+{% endfor %}

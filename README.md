@@ -39,9 +39,9 @@ For those more knowledgeable in Github, follow these instructions below:
 
 2. **All blogs originate in `/intervolve.org/blogs/<username>/` - so **create a directory** using your username in this directory. 
   
-   1. *From now on, **you are the example**, and your example username is `drfreeman`.*
+   1. *From now on, **you are the example**, and your example username is `username`.*
 
-3. Next, in `blogs/drfreeman/`, create another directory named `_posts`.
+3. Next, in `blogs/username/`, create another directory named `_posts`.
   
    1. This directory is recognized by Jekyll as a 'posts' location.  Jekyll will read and pull any `.md` files from this location and compile them into the site as a "post".  This will allow your posts to be viewed from the front page and in other listings around the site.
 
@@ -55,7 +55,7 @@ For those more knowledgeable in Github, follow these instructions below:
     ```
     ---
     layout: post
-    author: drfreeman
+    author: username
     ---
 
     your article goes here
@@ -65,7 +65,7 @@ For those more knowledgeable in Github, follow these instructions below:
 
    5. Other layouts can be found in `/intervolve.org/_layouts/`
 
-4. (optional)  If you feel so inclined, you can also make a landingpage for your blog.  To do this, just create an index.html or an index.md file in blogs/drfreeman/, and this page will be permalinked to `https://intervolve.org/blogs/drfreeman`
+4. (optional)  If you feel so inclined, you can also make a landingpage for your blog.  To do this, just create an index.html or an index.md file in blogs/username/, and this page will be permalinked to `https://intervolve.org/blogs/username`
 
   1. Make sure it has front matter to tell Jekyll to process it, whether it's an html or md file.
    
@@ -79,7 +79,7 @@ This section should be used by those who are very interested in customizing thei
     ```
     ---
     layout: post
-    author: drfreeman
+    author: username
     ---
     
     <your html article here> Contents! </your html article here>
@@ -89,10 +89,10 @@ This section should be used by those who are very interested in customizing thei
 
 2. Custom Styling:
 
-   1. Custom styling can be achieved by using your own assets.  Make sure to keep these in an assets folder inside your own `blogs/drfreeman` folder.  **Do not modify the asset files in `/intervolve.org/assets/`** since these control the sitewide styling.  (unless of course you have a suggestion to improve the whole site).
+   1. Custom styling can be achieved by using your own assets.  Make sure to keep these in an assets folder inside your own `blogs/username` folder.  **Do not modify the asset files in `/intervolve.org/assets/`** since these control the sitewide styling.  (unless of course you have a suggestion to improve the whole site).
 
    2. ***Submissions with custom page styling inside of the root level assets folder will be denied***.  Again - suggestions for site-wide changes will be reviewed, but do not put CSS for just your own pages in these files.
 
-   3. In your own custom HTML, link to your custom stylesheet at the top of your custom html file.  `<link rel="stylesheet" href="/blogs/drfreeman/assets/custom.css"`.  This will ensure that it can override the site CSS on your page.
+   3. In your own custom HTML, link to your custom stylesheet at the top of your custom html file.  `<link rel="stylesheet" href="/blogs/username/assets/custom.css"`.  This will ensure that it can override the site CSS on your page.
 
     
