@@ -3,15 +3,33 @@
 
 Welcome to intervolve.org, a simple static website generated live from GitHub that serves as a platform for projects, how-to's, or your very own simple blog.
 
-We the creators of Intervolve believe in a free, open, and decentralized internet.  Intervolve is our corner of the internet, and we invite you to make it yours too.  Intervolve.org is completely open-source, and is compiled straight from the LIVE branch into the site using the Jekyll static site generator.
+We the creators of Intervolve believe in a free, open, and decentralized internet.  Intervolve is our corner of the internet, and we invite you to make it yours too.  Intervolve.org is completely open-source, and is compiled straight from the LIVE branch into the site using the Jekyll static site generator, a powerful Wordpress alternative. 
 
-Feel free to suggest any changes or improvements to the site.  To start your own blog, please see the "How to contribute" section based on your knowledge of Github.  The blogs ***must*** conform to the standard site structure in order to be accepted.  
+Feel free to suggest any changes or improvements to the site. If you know how to do it and want to program it, we will take a look. To start your own blog, please see the "How to contribute" section based on your knowledge of Github.  The blogs ***must*** conform to the standard site structure in order to be accepted.  
 
 ## How to contribute - Beginner (section not complete)
 
-Start here:  https://guides.github.com/
-
 We want everyone to contribute.  Github is fun, and not too difficult to learn, but understanding it is important for being able to submit your articles.
+
+General Knowledge for Github:  https://guides.github.com/
+
+Basically all you need to know is that github allows you to access the files used to creat the website itself. All this is right now is a good old fasioned static site that loads quickly (though we are still working on mobile support).
+
+Anyway to get started, if you can learn to follow the browser instructions for github, youre half way there. 
+
+1. [Github Hello World](https://guides.github.com/activities/hello-world/)
+
+2. After this you can go to [/intervolve.org/blogs/](https://github.com/intervolve-org/intervolve.org/tree/main/intervolve.org/blogs) on your copy of files for the site.
+	1.
+
+3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formattiag tool. From plain text and a few symbols you can have bold text.  drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s  Markdown code: drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<\`  \`double space newline.  
+
+4. Images and other elements are allowed. There will be rules for what can and can't be posted. Basically just use common sense. The admins will review all submissions.
+
+5. However, there are a couple more steps to get something rendered on the website, including knowing the other site structure. If you have completed the steps above you can continue to the next section. Or you can play around with markdown in your github account continuing off "Hello World".  [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet)
+<!---
+Test comment but also speaking of images, a few small images could be added here for the tutorial
+-->
 
 ## How to contribute - Knowledegable
 
