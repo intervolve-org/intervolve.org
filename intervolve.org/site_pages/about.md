@@ -1,5 +1,9 @@
+---
+layout: post
+title: About
+permalink: /about/
+---
 # intervolve.org (DRAFT)
-
 
 Welcome to intervolve.org, a simple static website generated live from GitHub that serves as a platform for projects, how-to's, or your very own simple blog.
 
@@ -11,18 +15,21 @@ Feel free to suggest any changes or improvements to the site. If you know how to
 
 We want everyone to contribute.  Github is fun, and not too difficult to learn, but understanding it is important for being able to submit your articles.
 
-General Knowledge for Github:  https://guides.github.com/
+General Knowledge for Github:  [https://guides.github.com/](https://guides.github.com/)
 
 Basically all you need to know is that github allows you to access the files used to creat the website itself. All this is right now is a good old fasioned static site that loads quickly (though we are still working on mobile support).
 
-Anyway to get started, if you can learn to follow the browser instructions for github, youre half way there. 
+Anyway to get started, if you can learn to follow the browser instructions for github, you're half way there. 
 
 1. [Github Hello World](https://guides.github.com/activities/hello-world/)
 
 2. After this you can go to [/intervolve.org/blogs/](https://github.com/intervolve-org/intervolve.org/tree/main/intervolve.org/blogs) on your copy of files for the site.
 	1.
 
-3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formattiag tool. From plain text and a few symbols you can have bold text.  drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s  Markdown code: drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<\`  \`double space newline.  
+3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formatting tool. From plain text and a few symbols you can have bold text.  
+	1. drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s 
+
+	2. Markdown code: ```drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<  double space newlinei>.```  
 
 4. Images and other elements are allowed. There will be rules for what can and can't be posted. Basically just use common sense. The admins will review all submissions.
 
@@ -31,7 +38,7 @@ Anyway to get started, if you can learn to follow the browser instructions for g
 Test comment but also speaking of images, a few small images could be added here for the tutorial
 -->
 
-## How to contribute - Knowledegable
+## How to contribute - Knowledgeable 
 
 For those more knowledgeable in Github, follow these instructions below:
 
