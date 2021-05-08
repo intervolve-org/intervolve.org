@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: About
 permalink: /about/
 ---
@@ -26,7 +26,10 @@ Anyway to get started, if you can learn to follow the browser instructions for g
 2. After this you can go to [/intervolve.org/blogs/](https://github.com/intervolve-org/intervolve.org/tree/main/intervolve.org/blogs) on your copy of files for the site.
 	1.
 
-3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formatting tool. From plain text and a few symbols you can have bold text.  drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s  Markdown code: drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<\`  \`double space newline.  
+3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formatting tool. From plain text and a few symbols you can have bold text.  
+	1. drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s 
+
+	2. Markdown code: ```drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<  double space newlinei>.```  
 
 4. Images and other elements are allowed. There will be rules for what can and can't be posted. Basically just use common sense. The admins will review all submissions.
 
