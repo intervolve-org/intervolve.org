@@ -1,0 +1,64 @@
+---
+layout: default
+permalink: /categories/
+---
+
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/landing-page.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/category-page.css"> -->
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #666666;
+}
+</style>
+
+<h1> Categories </h1>
+
+{% for cat in site.categories %}
+<button type="button" class="collapsible">{{ cat[0] }}</button>
+<div class="content">
+  <ul>
+  {% for post in cat[1] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+
+<!--<script type="text/javasript" src="/assets/js/collapsible-menu.js"></script>-->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
