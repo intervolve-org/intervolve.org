@@ -9,13 +9,18 @@ permalink: /categories/
 <h1> All Categories: </h1>
 
 {% for cat in site.categories %}
-<button type="button" class="collapsible">{{ cat[0] }}</button>
+<div class="cat-container">
+<button type="button" class="collapsible">
+  <p class="button-text-container">{{ cat[0] }}</p>
+  <p class="expand-icon">+</p>
+</button>
 <div class="content">
   <ul>
   {% for post in cat[1] %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
+</div>
 </div>
 {% endfor %}
 

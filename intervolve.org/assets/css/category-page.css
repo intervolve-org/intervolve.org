@@ -8,7 +8,10 @@
   text-align: left;
   outline: none;
   font-size: 15px;
-  margin: 5px;
+}
+
+.cat-container{
+  margin: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -22,4 +25,13 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #666666;
+}
+
+.button-text-container{
+  float: left;
+}
+
+.expand-icon{
+  float: right;
+  font-size: 15pt;
 }
