@@ -8,4 +8,4 @@ Intervolve.org is an open-source website built by a small community of people ca
 
 Our github for our site can be found here: [intervolve.org](https://github.com/intervolve-org/intervolve.org)
 
-To contribute, please see our tutorial:  [How to Contribute](https://intervolve.org/how-to-contribute/)
+To contribute, please see our tutorial:  [How to Contribute](/how-to-contribute/)
