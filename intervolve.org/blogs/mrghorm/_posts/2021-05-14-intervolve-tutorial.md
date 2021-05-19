@@ -1,7 +1,15 @@
-# intervolve.org (DRAFT)
+---
+author: "mrghorm, greekenox"
+layout: post
+title: "Welcome to intervolve"
+excerpt_separator: <!--more-->
+---
 
+<i>This post is still a draft!</i>
 
 Welcome to intervolve.org, a simple static website generated live from GitHub that serves as a platform for projects, how-to's, or your very own simple blog.
+
+<!--more-->
 
 We the creators of Intervolve believe in a free, open, and decentralized internet.  Intervolve is our corner of the internet, and we invite you to make it yours too.  Intervolve.org is completely open-source, and is compiled straight from the LIVE branch into the site using the Jekyll static site generator, a powerful Wordpress alternative. 
 

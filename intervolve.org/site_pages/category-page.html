@@ -1,0 +1,44 @@
+---
+layout: default
+permalink: /categories/
+---
+
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/landing-page.css"> -->
+<link rel="stylesheet" type="text/css" href="/assets/css/category-page.css">
+
+<h1> All Categories: </h1>
+
+{% for cat in site.categories %}
+<div class="cat-container">
+<button type="button" class="collapsible">
+  <p class="button-text-container">{{ cat[0] }}</p>
+  <p class="expand-icon">+</p>
+</button>
+<div class="content">
+  <ul>
+  {% for post in cat[1] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+</div>
+{% endfor %}
+
+<!--<script type="text/javasript" src="/assets/js/collapsible-menu.js"></script>-->
+<!-- Script linking isn't working for some reason, so this script needs to be kept inline with the page -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>

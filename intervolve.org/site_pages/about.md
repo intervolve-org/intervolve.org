@@ -1,5 +1,9 @@
+---
+layout: post
+title: About
+permalink: /about/
+---
 # intervolve.org (DRAFT)
-
 
 Welcome to intervolve.org, a simple static website generated live from GitHub that serves as a platform for projects, how-to's, or your very own simple blog.
 
@@ -11,18 +15,21 @@ Feel free to suggest any changes or improvements to the site. If you know how to
 
 We want everyone to contribute.  Github is fun, and not too difficult to learn, but understanding it is important for being able to submit your articles.
 
-General Knowledge for Github:  https://guides.github.com/
+General Knowledge for Github:  [https://guides.github.com/](https://guides.github.com/)
 
 Basically all you need to know is that github allows you to access the files used to creat the website itself. All this is right now is a good old fasioned static site that loads quickly (though we are still working on mobile support).
 
-Anyway to get started, if you can learn to follow the browser instructions for github, youre half way there. 
+Anyway to get started, if you can learn to follow the browser instructions for github, you're half way there. 
 
 1. [Github Hello World](https://guides.github.com/activities/hello-world/)
 
 2. After this you can go to [/intervolve.org/blogs/](https://github.com/intervolve-org/intervolve.org/tree/main/intervolve.org/blogs) on your copy of files for the site.
 	1.
 
-3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formattiag tool. From plain text and a few symbols you can have bold text.  drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s  Markdown code: drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<\`  \`double space newline.  
+3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formatting tool. From plain text and a few symbols you can have bold text.  
+	1. drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s 
+
+	2. Markdown code: ```drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<  double space newlinei>.```  
 
 4. Images and other elements are allowed. There will be rules for what can and can't be posted. Basically just use common sense. The admins will review all submissions.
 
@@ -31,7 +38,7 @@ Anyway to get started, if you can learn to follow the browser instructions for g
 Test comment but also speaking of images, a few small images could be added here for the tutorial
 -->
 
-## How to contribute - Knowledegable
+## How to contribute - Knowledgeable 
 
 For those more knowledgeable in Github, follow these instructions below:
 
@@ -39,9 +46,9 @@ For those more knowledgeable in Github, follow these instructions below:
 
 2. **All blogs originate in `/intervolve.org/blogs/<username>/` - so **create a directory** using your username in this directory. 
   
-   1. *From now on, **you are the example**, and your example username is `username`.*
+   1. *From now on, **you are the example**, and your example username is `drfreeman`.*
 
-3. Next, in `blogs/username/`, create another directory named `_posts`.
+3. Next, in `blogs/drfreeman/`, create another directory named `_posts`.
   
    1. This directory is recognized by Jekyll as a 'posts' location.  Jekyll will read and pull any `.md` files from this location and compile them into the site as a "post".  This will allow your posts to be viewed from the front page and in other listings around the site.
 
@@ -55,7 +62,7 @@ For those more knowledgeable in Github, follow these instructions below:
     ```
     ---
     layout: post
-    author: username
+    author: drfreeman
     ---
 
     your article goes here
@@ -65,7 +72,7 @@ For those more knowledgeable in Github, follow these instructions below:
 
    5. Other layouts can be found in `/intervolve.org/_layouts/`
 
-4. (optional)  If you feel so inclined, you can also make a landingpage for your blog.  To do this, just create an index.html or an index.md file in blogs/username/, and this page will be permalinked to `https://intervolve.org/blogs/username`
+4. (optional)  If you feel so inclined, you can also make a landingpage for your blog.  To do this, just create an index.html or an index.md file in blogs/drfreeman/, and this page will be permalinked to `https://intervolve.org/blogs/drfreeman`
 
   1. Make sure it has front matter to tell Jekyll to process it, whether it's an html or md file.
    
@@ -79,7 +86,7 @@ This section should be used by those who are very interested in customizing thei
     ```
     ---
     layout: post
-    author: username
+    author: drfreeman
     ---
     
     <your html article here> Contents! </your html article here>
@@ -89,10 +96,10 @@ This section should be used by those who are very interested in customizing thei
 
 2. Custom Styling:
 
-   1. Custom styling can be achieved by using your own assets.  Make sure to keep these in an assets folder inside your own `blogs/username` folder.  **Do not modify the asset files in `/intervolve.org/assets/`** since these control the sitewide styling.  (unless of course you have a suggestion to improve the whole site).
+   1. Custom styling can be achieved by using your own assets.  Make sure to keep these in an assets folder inside your own `blogs/drfreeman` folder.  **Do not modify the asset files in `/intervolve.org/assets/`** since these control the sitewide styling.  (unless of course you have a suggestion to improve the whole site).
 
    2. ***Submissions with custom page styling inside of the root level assets folder will be denied***.  Again - suggestions for site-wide changes will be reviewed, but do not put CSS for just your own pages in these files.
 
-   3. In your own custom HTML, link to your custom stylesheet at the top of your custom html file.  `<link rel="stylesheet" href="/blogs/username/assets/custom.css"`.  This will ensure that it can override the site CSS on your page.
+   3. In your own custom HTML, link to your custom stylesheet at the top of your custom html file.  `<link rel="stylesheet" href="/blogs/drfreeman/assets/custom.css"`.  This will ensure that it can override the site CSS on your page.
 
     
