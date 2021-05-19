@@ -3,7 +3,7 @@ author: "mrghorm, greekenox"
 layout: post
 title: "Welcome to intervolve"
 excerpt_separator: <!--more-->
-permalink: /how-to-contribute/
+permalink: /about/
 ---
 
 <i>This post is still a draft!</i>
