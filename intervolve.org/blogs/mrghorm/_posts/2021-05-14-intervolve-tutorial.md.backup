@@ -51,15 +51,15 @@ For those more knowledgeable in Github, follow these instructions below:
 
 3. Next, in `blogs/username/`, create another directory named `_posts`.
   
-	1. This directory is recognized by Jekyll as a 'posts' location.  Jekyll will read and pull any `.md` files from this location and compile them into the site as a "post".  This will allow your posts to be viewed from the front page and in other listings around the site.
+   A. This directory is recognized by Jekyll as a 'posts' location.  Jekyll will read and pull any `.md` files from this location and compile them into the site as a "post".  This will allow your posts to be viewed from the front page and in other listings around the site.
 
 4. To create a post:
   
-    1. Name the file using the following naming pattern:  `yyyy-mm-dd-your-title-here.md`.  The date should typically be the day on which you're writing the post.  It would look like this on May 1st, 2021:  `2021-05-01-how-to-slay-nihilanth.md`.
+   A. Name the file using the following naming pattern:  `yyyy-mm-dd-your-title-here.md`.  The date should typically be the day on which you're writing the post.  It would look like this on May 1st, 2021:  `2021-05-01-how-to-slay-nihilanth.md`.
   
-    1. Files in `_posts` must contain Jekyll front matter.  Read about front matter here:  https://jekyllrb.com/docs/front-matter/
+   B. Files in `_posts` must contain Jekyll front matter.  Read about front matter here:  https://jekyllrb.com/docs/front-matter/
   
-	1. The front matter for posts should at least include the layout `post` and your authored name like so:
+   C. The front matter for posts should at least include the layout `post` and your authored name like so:
     ```
     ---
     layout: post
@@ -71,7 +71,7 @@ For those more knowledgeable in Github, follow these instructions below:
   
    D. You should write your articles in Markdown unless you really know what you're doing.  Here's a markdown cheat sheet:  https://www.markdownguide.org/cheat-sheet .  However you *can* write your own custom HTML & CSS if you desire.  See "How to contribute - Advanced" section.
 
-	1. Other layouts can be found in `/intervolve.org/_layouts/`
+   E. Other layouts can be found in `/intervolve.org/_layouts/`
 
 4. (optional)  If you feel so inclined, you can also make a landingpage for your blog.  To do this, just create an index.html or an index.md file in blogs/username/, and this page will be permalinked to `https://intervolve.org/blogs/username`
 
