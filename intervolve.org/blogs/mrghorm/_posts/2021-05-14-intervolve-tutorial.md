@@ -30,7 +30,16 @@ Anyway to get started, if you can learn to follow the browser instructions for g
 2. After this you can go to [/intervolve.org/blogs/](https://github.com/intervolve-org/intervolve.org/tree/main/intervolve.org/blogs) on your copy of files for the site.
 	1.
 
-3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formattiag tool. From plain text and a few symbols you can have bold text.  drfreeman becomes *drfreeman* or ***drfreeman*** by adding three `*`'s  Markdown code: drfreeman becomes \*\*\* drfreeman\*\*\* by adding three \`s\`'s  \<\`  \`double space newline.  
+3. Place a `.md` file in the blogs folder. ***.md*** stands for *markdown*. Blog pages can be anything from just typed text to a full html webpage. Either way it gets compiled to the look of the site. Markdown is a fairly easy formattiag tool. From plain text and a few symbols you can have bold text.  For example:  
+
+	**Markdown code:**
+	```
+	Dr Freeman becomes *Dr Freeman* or ***Dr Freeman*** by adding three *'s	
+	``` 
+	
+	**Output:**
+	
+	Dr Freeman becomes *Dr Freeman* or ***Dr Freeman*** by adding three `*`'s
 
 4. Images and other elements are allowed. There will be rules for what can and can't be posted. Basically just use common sense. The admins will review all submissions.
 
@@ -43,11 +52,23 @@ Test comment but also speaking of images, a few small images could be added here
 
 For those more knowledgeable in Github, follow these instructions below:
 
-1. Fork the site into your own repo, clone it locally, blah blah blah.  Just get it to a point where you can work on your own copy of the repo.
+1. First things first:  Fork the site into your own repo, clone it locally, blah blah blah.  Just get it to a point where you can work on your own copy of the repo.
+
+2. Second things second:  The root of the Jekyll site is 
+
+	`intervolve.org(.git)/intervolve.org/`  
+	
+	For example, my blogs folder *actually* exists in 
+	
+	`intervolve.org/intervolve.org/blogs/mrghorm/`
+	
+	but from here on out in the tutorial and in site code is just referred to as 
+	
+	`/blogs/mrghorm/`
 
 2. **All blogs originate in `/intervolve.org/blogs/<username>/` - so **create a directory** using your username in this directory. 
   
-   A. *From now on, **you are the example**, and your example username is `username`.*
+	1. *From now on, **you are the example**, and your example username is `username`.*
 
 3. Next, in `blogs/username/`, create another directory named `_posts`.
   
