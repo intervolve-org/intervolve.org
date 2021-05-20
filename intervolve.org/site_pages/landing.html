@@ -6,21 +6,31 @@ permalink: /
 
 <link rel="stylesheet" type="text/css" href="/assets/css/landing-page.css">
 
-<div class="row">
-	<div class="column">
-		<div class="card">
-			<img class="header-image" src="/assets/images/element-400x400.png" >
-			<p>Element<p>
-		</div>
-	</div>
-	<div class="column">
-		<div class="card">
-			<img class="header-image" src="/assets/images/mumble-400x400.png">
-			<p>Mumble</p>
-		</div>
-	</div>
-</div>
 
+<div class="content-row">
+{% for page in site.data.pinned_page %}
+
+	<ul class="content-list" style="color:white;list-style-type:none;">
+			{% for post in site.posts %}
+			{% if post.url == page.url %}
+				<a href="{{ post.url }}" class="post-card">
+				<li class="post-card">
+					<h5> PINNED: </h5>
+					<h2 class="post-card">{{ post.title }}</h2>
+					<img class="post-card" src="{{ post.image }}" alt="">
+					<p class="excerpt">{{ post.excerpt }}</p>
+					<hr>
+					<p class="tags post-card"> Author: {{ post.author }} </p>
+
+				</li>
+				</a>
+
+			{% endif %}
+			{% endfor %}
+	</ul>
+{% endfor %}
+</div>
+<hr>
 <div class="content-row">
 	<div class="content-column-left">
 		<h3> Latest Posts: </h3>
@@ -32,6 +42,7 @@ permalink: /
 					<h2 class="post-card">{{ post.title }}</h2>
 					<img class="post-card" src="{{ post.image }}" alt="">
 					<p class="excerpt">{{ post.excerpt }}</p>
+					<hr>
 					<p class="tags post-card"> Author: {{ post.author }} </p>
 
 				</li>
@@ -42,14 +53,31 @@ permalink: /
 	</div>
 	<div class="sidebar-column">
 
+		<h3> Dedicated Authors: </h3>
+
+		<div class="sidebar-content">
+			<ul>
+				{% for author in site.data.authors %}
+				<li><a href="{{ author.permalink }}">{{ author.name }} </a></li>
+				{% endfor %}
+		</div>
+
 		<h3> Post categories: </h3>
 
 		<div class="sidebar-content">
 
 			<ul>
-				<li>Sidebar</li>
-				<li>Test</li>
+				{% for cat in site.categories %}
+					{% if cat[0] == "blogs" %}
+						{% continue %}
+					{% endif %}
+					<li><a href=""> {{ cat[0] }}</a> </li>
+
+				{% endfor %}
 			</ul>
 		</div>
+
+
+
 	</div>
 </div>

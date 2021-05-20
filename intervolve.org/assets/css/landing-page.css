@@ -1,3 +1,7 @@
+h5 {
+  margin: 0;
+}
+
 /*****  HEADER AREA  *****/
 
 /* Float four columns side by side */
@@ -8,7 +12,7 @@
 }
 
 /* Remove extra left and right margins, due to padding in columns */
-.row {margin: 0 -5px;}
+.row {margin: 10px -5px;}
 
 /* Clear floats after the columns */
 .row:after {
@@ -117,9 +121,11 @@ p.excerpt > p {
 	max-height: 200px;
 }
 
-p.tag {
+p.tags {
 	color: #9f9f9f;
 	font-size: 16px;
 	line-height: 0.3;
 	text-shadow: 0 0;
+	padding-top: 10px;
+	font-style: italic;
 }
