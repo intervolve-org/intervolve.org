@@ -18,3 +18,9 @@ sass:
 
 #collections:
 #  authors:
+url: https://intervolve.org
+plugins:
+    - jekyll-feed
+
+feed:
+  excerpt_only: false
