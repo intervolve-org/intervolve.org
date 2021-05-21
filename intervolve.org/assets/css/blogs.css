@@ -1,0 +1,86 @@
+/******  CONTENT AREA  *****/
+
+.content-column {
+	float: left;
+	width: 75%;
+	padding: 0 5px;
+}
+
+.sidebar-column {
+	float: left;
+	width: 25%;
+	padding: 0 5px;
+
+}
+
+.sidebar-content {
+	margin-top: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #707070;
+}
+
+.content-row {
+	margin: 0 -5px;
+}
+
+.content-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/*****  POST LISTINGS *****/
+
+li.post-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  background-color: #505050;
+}
+
+.content-list {
+	margin-left: -40px;
+}
+
+a.post-card {
+	text-decoration: none;
+}
+
+img.post-card {
+	max-width:100px;
+	float:left;
+	padding-right:10px;
+	padding-left:5px;
+}
+
+h2.post-card{
+	text-shadow: 0 0;
+}
+
+p.post-card {
+	text-shadow: 0 0;
+}
+
+p.excerpt > p {
+	font-size: 15px;
+	color: red;
+}
+
+/******  POST TAGS  *****/
+
+.post-image {
+	max-height: 200px;
+}
+
+p.tags {
+	color: #9f9f9f;
+	font-size: 16px;
+	line-height: 0.3;
+	text-shadow: 0 0;
+	padding-top: 10px;
+	font-style: italic;
+}
+

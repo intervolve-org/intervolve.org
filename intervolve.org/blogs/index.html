@@ -27,3 +27,54 @@ layout: default
 	{% endfor %}
 	</ul>
 {% endfor %}
+
+<div class="content-row">
+	<div class="content-column-left">
+		<h3> Latest Posts: </h3>
+
+		<ul class="content-list" style="color:white;list-style-type:none;" >
+			{% for post in site.posts limit:10 %}
+				<a href="{{ post.url }}" class="post-card">
+				<li class="post-card">
+					<h2 class="post-card">{{ post.title }}</h2>
+					<img class="post-card" src="{{ post.image }}" alt="">
+					<p class="excerpt">{{ post.excerpt }}</p>
+					<hr>
+					<p class="tags post-card"> Author: {{ post.author }} </p>
+
+				</li>
+				</a>
+			{% endfor %}
+		</ul>
+
+	</div>
+	<div class="sidebar-column">
+
+		<h3> Dedicated Authors: </h3>
+
+		<div class="sidebar-content">
+			<ul>
+				{% for author in site.data.authors %}
+				<li><a href="{{ author.permalink }}">{{ author.name }} </a></li>
+				{% endfor %}
+		</div>
+
+		<h3> Post categories: </h3>
+
+		<div class="sidebar-content">
+
+			<ul>
+				{% for cat in site.categories %}
+					{% if cat[0] == "blogs" %}
+						{% continue %}
+					{% endif %}
+					<li><a href=""> {{ cat[0] }}</a> </li>
+
+				{% endfor %}
+			</ul>
+		</div>
+
+
+
+	</div>
+</div>
